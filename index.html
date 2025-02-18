@@ -66,6 +66,37 @@
 		var openReception = function () {
 			window.open('https://maps.app.goo.gl/aeBkodpaS9Uxru6p6', '_blank')
 		}
+		var openForm = function () {
+			window.open('https://docs.google.com/forms/d/e/1FAIpQLSeCs_rtOY7VVRsfotzJVPHlMHjeRXLA6tOqgjWRcaalpHGijg/viewform?usp=sharing')
+		}
+	</script>
+	<script>
+		var end = new Date('2025-04-12T17:30:00-0700').getTime();
+		var _second = 1000;
+		var _minute = _second * 60;
+		var _hour = _minute * 60;
+		var _day = _hour * 24;
+		var timer;
+
+		function showRemaining() {
+			var now = new Date();
+			var distance = end - now;
+			var element = document.querySelector('.countdown')
+			if (distance < 0) {
+				clearInterval(timer);
+				element.textContent = '00:00:00';
+
+				return;
+			}
+			var days = Math.floor(distance / _day);
+			var hours = Math.floor((distance % _day) / _hour);
+			var minutes = Math.floor((distance % _hour) / _minute);
+			var seconds = Math.floor((distance % _minute) / _second);
+
+			element.textContent = `${String(days).padStart(2, '0') || '00'}:${String(hours).padStart(2, '0') ||'00'}:${String(minutes).padStart(2, '0') || '00'}:${String(seconds).padStart(2, '0') || '00'}`
+		}
+
+		timer = setInterval(showRemaining, 1000);
 	</script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
@@ -277,9 +308,7 @@
 			<span class="hour">Elegante/Formal</span> <br>
 		</div>
 		<div class="text-center mt-30">
-			<figure>
-				<img class="ml-50" width="150" height="150" src="images/dress-code.png" alt="Glasses">
-			</figure>
+			<img class="ml-50" width="150" height="150" src="images/dress-code.png" alt="Glasses">
 		</div>
 		<div class="container text-center mb-20">
 			<span class="hour">Reservemos el moño para el novio<br>y el blanco para la novia 
@@ -290,226 +319,87 @@
 	<div id="fh5co-background" class="fh5co-cover animate-box" style="background-image:url(images/divider-after-date.jpg);">
 	</div>
 
-	<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="display-t">
-					<div class="display-tc">
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-users"></i>
-								</span>
-
-								<span class="counter js-counter" data-from="0" data-to="500" data-speed="5000" data-refresh-interval="50">1</span>
-								<span class="counter-label">Estimated Guest</span>
-
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-user"></i>
-								</span>
-
-								<span class="counter js-counter" data-from="0" data-to="1000" data-speed="5000" data-refresh-interval="50">1</span>
-								<span class="counter-label">We Catter</span>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-calendar"></i>
-								</span>
-								<span class="counter js-counter" data-from="0" data-to="402" data-speed="5000" data-refresh-interval="50">1</span>
-								<span class="counter-label">Events Done</span>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-clock"></i>
-								</span>
-
-								<span class="counter js-counter" data-from="0" data-to="2345" data-speed="5000" data-refresh-interval="50">1</span>
-								<span class="counter-label">Hours Spent</span>
-
-							</div>
-						</div>
-					</div>
-				</div>
+	<div style="background-image:url(images/background.jpg)">
+		<div class="container text-center mt-15">
+			<span class="snell-font itinerary">Itinerario</span>
+			<div>
+				<img width="100%" height="auto" src="images/Itinerario.png" alt="Itinerario">
+			</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="fh5co-testimonial">
-		<div class="container">
-			<div class="row">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<span>Best Wishes</span>
-						<h2>Friends Wishes</h2>
-					</div>
+	<div id="fh5co-background" class="fh5co-cover animate-box" style="background-image:url(images/divider_final.jpg);">
+	</div>
+	
+	<div style="background-image:url(images/background.jpg);">
+		<div class="container text-center mt-15">
+			<span class="snell-font ceremony">No niños</span>
+			<br>
+			<span>Por cuestiones de seguridad en el lugar, nuestra boda será solo para adultos</span><br>
+		</div>
+	
+		<div class="text-center mt-30">
+			<figure>
+				<img width="100" height="100" src="images/envelope.png" alt="Glasses">
+			</figure>
+		</div>
+	
+		<div class="container text-center mt-15">
+			<span class="snell-font ceremony">Lluvia de sobres</span>
+			<br>
+			<span>Gracias por tu compañía en nuestra nueva etapa</span><br>
+			<span>El regalo es opcional.. la asistencia es obligatoria, si a pesar de todo quieres tener un detalle con nosotros, te agradecemos que sea en sobre.</span>
+		</div>
+
+		<div class="d-flex">
+			<div class="container text-center mt-30">
+				<div>
+					<span class="snell-font ceremony">El gran día empieza en</span>
 				</div>
-				<div class="row">
-					<div class="col-md-12 animate-box">
-						<div class="wrap-testimony">
-							<div class="owl-carousel-fullwidth">
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="images/couple-1.jpg" alt="user">
-										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-										<blockquote>
-											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"</p>
-										</blockquote>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="images/couple-2.jpg" alt="user">
-										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-										<blockquote>
-											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, at the coast of the Semantics, a large language ocean."</p>
-										</blockquote>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="images/couple-3.jpg" alt="user">
-										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-										<blockquote>
-											<p>"Far far away, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
-										</blockquote>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div>
+					<span class="countdown"></span>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div id="fh5co-services" class="fh5co-section-gray">
-		<div class="container">
-			
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>We Offer Services</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-6">
-					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-						<span class="icon">
-							<i class="icon-calendar"></i>
-						</span>
-						<div class="feature-copy">
-							<h3>We Organized Events</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						</div>
-					</div>
-
-					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-						<span class="icon">
-							<i class="icon-image"></i>
-						</span>
-						<div class="feature-copy">
-							<h3>Photoshoot</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						</div>
-					</div>
-
-					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-						<span class="icon">
-							<i class="icon-video"></i>
-						</span>
-						<div class="feature-copy">
-							<h3>Video Editing</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-md-6 animate-box">
-					<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg); ">
-						<a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video2"></i></a>
-						<div class="overlay"></div>
-					</div>
-				</div>
-			</div>
-
-			
-		</div>
-	</div>
-
-
-	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Are You Attending?</h2>
-					<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-10 col-md-offset-1">
-					<form class="form-inline">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="name" class="sr-only">Name</label>
-								<input type="name" class="form-control" id="name" placeholder="Name">
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Email">
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-block">I am Attending</button>
-						</div>
-					</form>
-				</div>
+		<div class="text-center mb-20">
+			<div class="inline-flex countdown-labels">
+				<span>Días</span>
+				<span>Horas</span>
+				<span>Minutos</span>
+				<span>Segundos</span>
 			</div>
 		</div>
 	</div>
-
-	<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
-
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-
-		</div>
-	</footer>
+	<div id="fh5co-background" class="fh5co-cover animate-box" style="height:500px;background-image:url(images/divider_final_final.jpg);">
 	</div>
+
+	
+	<div style="background-image:url(images/background.jpg)">
+		<div class="container text-center mt-15 mb-20">
+			<span>
+				Es un honor y un privilegio invitarlos a ser parte de este día tan significativo para nosotros. Su presencia hará de nuestro casamiento un evento aún más inolvidable lleno de felicidad. 
+			</span> <br><br>
+			<button onclick="openForm()">Confirmar asistencia</button>
+		</div>
+	
+		<div class="container text-center mb-20">
+			<span>
+				Únete a nosotros para celebrar una unión de amor, risas y felicidad 
+			</span>
+		</div>
+
+		<div class="container text-center mt-15">
+			<span class="snell-font wedding">¡Te esperamos!</span>
+		</div>
+
+		<div class="text-center">
+			<figure>
+				<img width="200" height="200" src="images/c&a-logo.png" alt="Glasses">
+			</figure>
+		</div>
+	</div>
+
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
