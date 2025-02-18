@@ -1719,10 +1719,9 @@ form label {
   visibility: visible;
 }
 .gototop a {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   display: table;
-  background: rgba(0, 0, 0, 0.5);
   color: #fff;
   text-align: center;
   -webkit-border-radius: 4px;
